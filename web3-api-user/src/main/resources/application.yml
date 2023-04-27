@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://${DB_USER:admin}:${DB_PASSWORD}@web3projetofinalcluster.ang2njl.mongodb.net/DB_api-user?retryWrites=true&w=majority
+  application:
+    name: web3-user
+
+server:
+  port: 8000
