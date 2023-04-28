@@ -7,3 +7,8 @@ spring:
 
 server:
   port: 8000
+
+eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_URL:http://localhst:8761/eureka}

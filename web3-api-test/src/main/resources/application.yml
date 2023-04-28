@@ -5,6 +5,7 @@ spring:
   application:
     name: test-api
 
+
 resilience4j:
   circuitbreaker:
     instances:
@@ -15,3 +16,7 @@ resilience4j:
         slow-call-duration-threshold: 500
         slow-call-rate-threshold: 50
         permitted-number-of-calls-in-half-open-state: 3
+eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_URL:http://localhst:8761/eureka}
