@@ -1,6 +1,6 @@
 package com.example.web3apitest.service;
 
-import com.example.web3apitest.controller.Payroll;
+import com.example.web3apitest.controller.TestController;
 import com.example.web3apitest.feignClients.UserFeign;
 import com.example.web3apitest.model.response.UserResponse;
 import lombok.RequiredArgsConstructor;
@@ -18,13 +18,13 @@ public class TestControlerService {
     private final UserFeign userFeign;
 
     @GetMapping("/{idPlayer}")
-    public ResponseEntity<Mono<Payroll>> getPlayerTest(@PathVariable Long idPlayer, @RequestBody Payroll test){
+    public ResponseEntity<Mono<TestController>> getPlayerTest(@PathVariable Long idPlayer, @RequestBody TestController test){
 
         Mono<UserResponse> userMono = userFeign.findById(idPlayer).getBody();
 
         return ResponseEntity.ok().body(
                 userMono.flatMap(userResponse -> Mono.just(
-                        new Payroll(userResponse.name(),
+                        new TestController(userResponse.name(),
                                 test.getTestForHand(),
                                 test.getTestBackHand(),
                                 (test.getTestForHand() + test.getTestBackHand())/2,

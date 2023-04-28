@@ -6,6 +6,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients
+@EnableEureka
 public class Web3ApiTestApplication {
 
     public static void main(String[] args) {

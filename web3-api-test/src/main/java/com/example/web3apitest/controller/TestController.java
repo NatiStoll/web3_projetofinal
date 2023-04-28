@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter @Setter
 @AllArgsConstructor
-public class Payroll {
+public class TestController {
 
 String name;
 Double testForHand;
