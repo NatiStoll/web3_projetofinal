@@ -4,3 +4,14 @@ server:
 spring:
   application:
     name: test-api
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      web3-api-test-circuitbreaker:
+        sliding-window-size: 10
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10000
+        slow-call-duration-threshold: 500
+        slow-call-rate-threshold: 50
+        permitted-number-of-calls-in-half-open-state: 3
